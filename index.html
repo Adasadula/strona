@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiałMiał.pl - strona główna.</title>
+</head>
+<body>
+<header>
+Miał Miał.pl - odstresój się.<br>
+</header>
+<nav>
+    <początek powitania></pocz>
+    <script>
+                        var snd = new Audio("cześć.mp3");
+        snd.loop = false;
+        snd.autoplay = true;
+
+        document.getElementById("bstop").onclick = function () { snd.pause(); };
+
+        document.getElementById("bplay").onclick = function () { snd.play(); };
+    </script>
+<koniec powitania></koniec>
+
+<script>
+    var snd = new Audio("tlo.mp3");
+    snd.loop = true;
+    snd.autoplay = true;
+
+    document.getElementById("bstop").onclick = function () { snd.pause(); };
+
+    document.getElementById("bplay").onclick = function () { snd.play(); };
+</script>
+<a href="gra.html" target="_blank">Nowa gra.</a>
+
+</nav>
+<footer>
+    Ile ju wytrzymałeś?<br>
+    <body onLoad="window.setTimeout('getSecs()',1)">
+
+        <script>
+
+        startday = new Date();
+        clockStart = startday.getTime();
+        function initStopwatch()
+        {
+         var myTime = new Date();
+                var timeNow = myTime.getTime();
+                var timeDiff = timeNow - clockStart;
+                this.diffSecs = timeDiff/1000;
+                return(this.diffSecs);
+        }
+        function getSecs()
+        {
+                var mySecs = initStopwatch();
+                var mySecs1 = ""+mySecs;
+                mySecs1= mySecs1.substring(0,mySecs1.indexOf("."));
+                document.tijd.hiero.value=mySecs1
+                window.setTimeout('getSecs()',1000);
+        }
+
+        </script>
+        </P>
+        <P><form name="tijd"><P>
+        <center>Jesteś tutaj już przez:
+        <br>
+        <input size=4 name=hiero>
+        <br>sekund.
+        </form>
+        </center>    
+        <br>
+        <br>
+        Licznik ten pokazuje, ile ju czasu wytrzymałeś na tej dziwnej grze.<br>
+</footer>
+</body>
+</html>
